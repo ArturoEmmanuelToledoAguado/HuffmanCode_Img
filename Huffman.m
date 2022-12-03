@@ -29,3 +29,8 @@ for i=0:255
     cont=cont+1;
 end
 
+%Valores de una imagen
+val=[0:255];
+
+%Diccionario de Huffman
+dic=huffmandict(val,prob);
