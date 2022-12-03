@@ -46,3 +46,6 @@ end
 
 %Codificacion de Huffman
 huffCode=huffmanenco(nVec,dic);
+
+%Información
+save('Datos.mat','huffCode','dic','f','c');
