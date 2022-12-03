@@ -34,3 +34,15 @@ val=[0:255];
 
 %Diccionario de Huffman
 dic=huffmandict(val,prob);
+
+%Convertimos un array a vector
+v_size=1;
+for k=1:f
+    for q=1:c
+        nVec(v_size)=img(k,q);
+        v_size=v_size+1;
+    end
+end
+
+%Codificacion de Huffman
+huffCode=huffmanenco(nVec,dic);
