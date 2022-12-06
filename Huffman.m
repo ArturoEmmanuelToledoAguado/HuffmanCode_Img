@@ -4,8 +4,19 @@ clc;
 
 %Abrimos la imagen
 img=imread('IMG/1.jpg');
-%Convertir a escala de grises y mostramos
-img=rgb2gray(img);
+
+%Menu
+opc=input('Seleccione una opcion\n1.-Imagen a color\n2.-Imagen a escala de grises\n');
+if opc==1
+    %Mapeamos los 255 colores
+    [img,colormap]=rgb2ind(img,255);
+elseif opc==2
+    %Convertir a escala de grises y mostramos
+    img=rgb2gray(img);
+else
+    disp('Entrada no valida')
+end
+
 figure
 imshow(img)
 
@@ -47,5 +58,9 @@ end
 %Codificacion de Huffman
 huffCode=huffmanenco(nVec,dic);
 
-%Información
-save('Datos.mat','huffCode','dic','f','c');
+%Guardado de Información
+if opc==1
+    save('Datos.mat','huffCode','dic','f','c','opc','colormap');
+else
+    save('Datos.mat','huffCode','dic','f','c','opc');
+end
